@@ -13,7 +13,7 @@ script:WaitForChild("Main"):Destroy()
 ```
 
 ### Analysis
-Even though the anticheat deletes `Main`, we can still recover it from another player. When `AnimationHandler` deletes the module, it does so locally - so the change is not replicated. The same is true for when other clients delete their own `Module` script, which means their module is still visible and replicated to us.
+Even though the anticheat deletes the `Main` ModuleScript, we can still recover it from another player. When the `AnimationHandler` LocalScript deletes the module, it does so locally - so the change is not replicated. The same is true for when other clients delete their own `Main` Modulescript, which means their module is still visible and replicated to us.
 
 When recovering the `Main` ModuleScript source, we can clean it up a bit for an easier understanding:
 ```lua
